@@ -1,0 +1,6 @@
+remote_theme: jekyll/minima
+
+title: HAFINI Group
+
+plugins:
+    - jekyll-remote-theme
