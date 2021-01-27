@@ -2,7 +2,7 @@
 layout: default
 ---
 
-HAFINI group is a consultancy helping financial businesses grow faster
+HAFINI Group is a consultancy helping financial businesses grow faster
 by using APIs to be better connected with their customers and partners.
 
 We’re experts in the business and technology of financial APIs.
@@ -21,7 +21,7 @@ goals.
 * Temenos
 * Funding Circle
 
-## HAFINI Group is lead by Mike Kelly
+## HAFINI Group is led by Mike Kelly
 
 <img width="100" height="100" style="border-radius: 50%;" src="/assets/mike.jpg">
 
