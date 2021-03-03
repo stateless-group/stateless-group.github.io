@@ -1,5 +1,8 @@
 ---
 layout: home
+
+site:
+  paginate: false
 ---
 
 HAFINI Group is a consultancy helping financial businesses grow faster
@@ -50,7 +53,7 @@ Just send a hello to [team@hafini.group](mailto:team@hafini.group) and we'll pic
 <div id="mc_embed_signup">
 <form action="https://group.us7.list-manage.com/subscribe/post?u=24373bcc787f225b0ff40c847&amp;id=06286306aa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-	<label for="mce-EMAIL">Leave your email to be notified when we publish new financial API research &amp; analysis</label>
+	<label for="mce-EMAIL">Get notified when HAFINI publish new financial API research &amp; analysis</label>
 	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_24373bcc787f225b0ff40c847_06286306aa" tabindex="-1" value=""></div>
