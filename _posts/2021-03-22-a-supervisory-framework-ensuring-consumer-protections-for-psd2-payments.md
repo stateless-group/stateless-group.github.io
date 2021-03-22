@@ -1,6 +1,7 @@
 ---
 layout: post
 
+redirect_from: /2021/03/17/a-supervisory-framework-ensuring-consumer-protections-for-psd2-payments
 author: by Mike Kelly (mike@hafini.group)
 title: A supervisory framework ensuring consumer protections for PSD2 payments in the UK
 ---

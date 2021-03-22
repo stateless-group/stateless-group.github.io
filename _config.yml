@@ -4,3 +4,7 @@ title: HAFINI Group
 
 plugins:
     - jekyll-remote-theme
+    - jekyll-redirect-from
+
+whitelist:
+    - jekyll-redirect-from
