@@ -110,7 +110,7 @@ Regulated actors must consider the risk factors as they apply to their specific 
 
 ### Customer presence for VRP payments with an SCA Exemption
 
-If the use case requires that the customer is “not in session” for the instruction of an individual VRP payment (i.e. does not perform SCA of the PSU and relies on the application of an available SCA exemption), then there is increased risk of customer dispute because the PISP may instruct a payment on behalf of the PSU which the PSU would dispute. We note that this risk factor does not apply to VRP Payments with delegated SCA.
+If the use case requires that the customer is “not in session” for the instruction of an individual VRP payment (i.e. does not perform SCA of the PSU and relies on the application of an available SCA exemption), then there is increased risk of customer dispute because the PISP may instruct a payment on behalf of the PSU which the PSU would dispute. This risk factor does not apply to VRP Payments with delegated SCA.
 
 
 ### Permissiveness of consent parameters
