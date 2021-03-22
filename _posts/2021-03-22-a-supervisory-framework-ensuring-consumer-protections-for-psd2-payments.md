@@ -5,7 +5,7 @@ redirect_from: /2021/03/17/a-supervisory-framework-ensuring-consumer-protections
 author: by Mike Kelly (mike@hafini.group)
 title: A supervisory framework ensuring consumer protections for PSD2 payments in the UK
 ---
-This paper details the principles of how PSD2 payments, including Variable Recurring Payments (VRPs), are treated under existing regulation. In doing so it, demonstrates the safety of PSD2 payments for consumers due to:
+This paper details the principles of how PSD2 payments, including Variable Recurring Payments (VRPs), are treated under existing regulation. In doing so, it demonstrates the safety of PSD2 payments for consumers due to:
 
 1. The obligation of firms conducting PSD2 payments to ensure consumers are appropriately protected.
 2. The array of ways in which PSD2 payments enable strong protection of customers, by providing high assurance risk control mechanisms to regulated firms.
