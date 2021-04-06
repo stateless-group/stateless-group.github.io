@@ -1,7 +1,7 @@
 ---
 layout: post
 
-author: by Mike Kelly (mike@hafini.group)
+author: by Mike Kelly (mike@stateless.group)
 title: VRP and Sweeping - avoiding a missed opportunity in the UK
 ---
 
@@ -97,4 +97,4 @@ My hope is that, with this, we can collectively ensure the UK achieves the
 outcome it deserves in good time, and continues to lead the world in banking
 and payments technology.
 
-Please contact me for further details [mike@hafini.group](mailto:mike@hafini.group)
+Please contact me for further details [mike@stateless.group](mailto:mike@stateless.group)

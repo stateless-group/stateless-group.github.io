@@ -1,6 +1,6 @@
 remote_theme: jekyll/minima
 
-title: HAFINI Group
+title: Stateless Group
 
 plugins:
     - jekyll-remote-theme

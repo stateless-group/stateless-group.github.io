@@ -1,7 +1,7 @@
 ---
 layout: post
 
-author: by Mike Kelly (mike@hafini.group)
+author: by Mike Kelly (mike@stateless.group)
 title: A call to Open Banking for the timely delivery of VRP for Sweeping in the UK
 ---
 The following is an open letter to Open Banking (OBIE) from industry, for consideration at the steering group meeting on the 25th of March 2021.
@@ -15,7 +15,7 @@ The following is an open letter to Open Banking (OBIE) from industry, for consid
 *   VRP for Sweeping is the necessary and optimal solution for the UK that has now been fully developed by OBIE and reviewed by industry, with analysis showing it should be mandated under the CMA Order.
 *   VRP and Sweeping can be a foundation for the legislative programme outlined by the Payments Landscape Review, and will ensure the UK remains the global leader in payments and regulation in line with recommendations of Kalifa Review.
 *   The UK’s independent status helped alleviate concerns around ‘gold plating’ of PSD2 regulation.
-*   The [proposed supervisory framework for PSD2 payments](https://hafini.group/2021/03/22/a-supervisory-framework-ensuring-consumer-protections-for-psd2-payments) provides detail on how regulated actors are expected to provide consumer protections.
+*   The [proposed supervisory framework for PSD2 payments](https://stateless.group/2021/03/22/a-supervisory-framework-ensuring-consumer-protections-for-psd2-payments) provides detail on how regulated actors are expected to provide consumer protections.
     *   Risks and controls have been mapped out for regulators and firms.
     *   Framework is derived from the OBIE consultation document which has undergone extensive industry review.
     *   FCA licensing and supervision provide strong underlying assurance on safety for consumers as well as mechanisms for regulatory intervention.
@@ -64,7 +64,7 @@ We propose that, at March IESG, the following commitments are made for delivery 
 *   OBIE to publish VRP Standard and Sweeping Access Standard.
 *   OBIE to deliver final recommendation on mandating Sweeping Access on CMA9.
 *   FCA to provide reassurance to market by publishing explicit guidance to firms PISP activity
-    *   Based on the proposal document “[A supervisory framework ensuring consumer protections for PSD2 payments in the UK](https://hafini.group/2021/03/22/a-supervisory-framework-ensuring-consumer-protections-for-psd2-payments)” which is derived from OBIE’s VRP Proposition consultation paper.
+    *   Based on the proposal document “[A supervisory framework ensuring consumer protections for PSD2 payments in the UK](https://stateless.group/2021/03/22/a-supervisory-framework-ensuring-consumer-protections-for-psd2-payments)” which is derived from OBIE’s VRP Proposition consultation paper.
     *   Delivered by FCA to firms by portfolio communications, and other supervisory correspondence.
     *   To emphasise the obligation on regulated actors to include appropriate consumer protections and risk controls for PISP activity.
     *   Could also be included in an amendment to approach documents.

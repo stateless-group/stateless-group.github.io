@@ -5,7 +5,7 @@ site:
   paginate: false
 ---
 
-HAFINI Group is a consultancy helping financial businesses grow faster
+Stateless Group is a consultancy helping financial businesses grow faster
 by using APIs to be better connected with their customers and partners.
 
 We’re experts in the business and technology of financial APIs.
@@ -24,7 +24,7 @@ goals.
 * Temenos
 * Funding Circle
 
-## HAFINI Group is led by Mike Kelly
+## Stateless Group is led by Mike Kelly
 
 <img width="100" height="100" style="border-radius: 50%;" src="/assets/mike.jpg">
 
@@ -39,7 +39,7 @@ cryptography.
 ## Contact us
 We can help you succeed.
 
-Just send a hello to [team@hafini.group](mailto:team@hafini.group) and we'll pick it up from there.
+Just send a hello to [team@stateless.group](mailto:team@stateless.group) and we'll pick it up from there.
 
 ## Stay in the loop
 
@@ -53,7 +53,7 @@ Just send a hello to [team@hafini.group](mailto:team@hafini.group) and we'll pic
 <div id="mc_embed_signup">
 <form action="https://group.us7.list-manage.com/subscribe/post?u=24373bcc787f225b0ff40c847&amp;id=06286306aa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-	<label for="mce-EMAIL">Get notified when HAFINI publish new financial API research &amp; analysis</label>
+	<label for="mce-EMAIL">Get notified when Stateless publish new financial API research &amp; analysis</label>
 	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_24373bcc787f225b0ff40c847_06286306aa" tabindex="-1" value=""></div>
