@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>  The Hypertext Application Language</title>
+    <meta name="description" content="HAL is a simple way of linking in REST APIs with either JSON or XML." />
+    <link rel="stylesheet" href="/assets/hal.css" />
+  </head>
+  <body>
+
+    <div id="main">
+
+      <header></header>
+
+      <div id="container">
+        <h1>HAL - Hypertext Application Language</h1>
+
+<h2>A lean hypermedia type</h2>
+
+<ul>
+<li><strong>Author:</strong>   <a href="http://stateless.co/">Mike Kelly</a> &lt;<a href="mailto:mike@stateless.co">mike@stateless.co</a>&gt;</li>
+<li><strong>Created:</strong>  2011-06-13</li>
+<li><strong>Updated:</strong>  2013-09-18 (Updated)</li>
+</ul>
+
+<h2>Summary</h2>
+
+<p>HAL is a simple format that gives a consistent and easy way to
+hyperlink between resources in your API.</p>
+
+<p>Adopting HAL will make your API explorable, and its documentation easily
+discoverable from within the API itself. In short, it will make your API
+easier to work with and therefore more attractive to client developers.</p>
+
+<p>APIs that adopt HAL can be easily served and consumed using open source
+libraries available for most major programming languages. It&#39;s also
+simple enough that you can just deal with it as you would any other
+JSON.</p>
+
+<h2>About The Author</h2>
+
+<p>Mike Kelly is a software engineer from the UK. He runs an <a href="http://stateless.co/">API
+consultancy</a> helping companies design and build beautiful APIs that
+developers love.</p>
+
+<h2>Quick links</h2>
+
+<ul>
+<li><a href="http://haltalk.herokuapp.com/">A demo API using HAL called HAL Talk</a></li>
+<li><a href="https://github.com/mikekelly/hal_specification/wiki/Libraries">A list of libraries for working with HAL (Obj-C, Ruby, JS, PHP, C#,
+etc.)</a></li>
+<li><a href="https://github.com/mikekelly/hal_specification/wiki/APIs">A list of public hypermedia APIs using HAL</a></li>
+<li><a href="http://groups.google.com/group/hal-discuss">Discussion group (questions, feedback, etc)</a></li>
+</ul>
+
+<h2>General Description</h2>
+
+<p>HAL provides a set of conventions for expressing hyperlinks in either
+JSON or XML.</p>
+
+<p><strong>The rest of a HAL document is just plain old JSON or XML.</strong></p>
+
+<p>Instead of using ad-hoc structures, or spending valuable time designing
+your own format; you can adopt HAL&#39;s conventions and focus on building
+and documenting the data and transitions that make up your API.</p>
+
+<p>HAL is a little bit like HTML for machines, in that it is generic and
+designed to drive many different types of application via hyperlinks.
+The difference is that HTML has features for helping &#39;human actors&#39; move
+through a web application to achieve their goals, whereas HAL is
+intended for helping &#39;automated actors&#39; move through a web API to
+achieve their goals.</p>
+
+<p>Having said that, <strong>HAL is actually very human-friendly too</strong>. Its
+conventions make the documentation for an API discoverable from the API
+messages themselves.  This makes it possible for developers to jump
+straight into a HAL-based API and explore its capabilities, without the
+cognitive overhead of having to map some out-of-band documentation onto
+their journey.</p>
+
+<h2>Examples</h2>
+
+<p>The example below is how you might represent a collection of orders with
+hal+json. Things to look for:</p>
+
+<ul>
+<li>The URI of the main resource being represented (&#39;/orders&#39;) expressed
+with a self link</li>
+<li>The &#39;next&#39; link pointing to the next page of orders</li>
+<li>A templated link called &#39;ea:find&#39; for searching orders by id</li>
+<li>The multiple &#39;ea:admin&#39; link objects contained in an array</li>
+<li>Two properties of the orders collection; &#39;currentlyProcessing&#39; and
+&#39;shippedToday&#39;</li>
+<li>Embedded order resources with their own links and properties</li>
+<li>The compact URI (curie) named &#39;ea&#39; for expanding the name of the
+links to their documentation URL</li>
+</ul>
+
+<h3>application/hal+json</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;self&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/orders&quot;</span> <span class="p">},</span>
+        <span class="s2">&quot;curies&quot;</span><span class="o">:</span> <span class="p">[{</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;ea&quot;</span><span class="p">,</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;http://example.com/docs/rels/{rel}&quot;</span><span class="p">,</span> <span class="s2">&quot;templated&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}],</span>
+        <span class="s2">&quot;next&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/orders?page=2&quot;</span> <span class="p">},</span>
+        <span class="s2">&quot;ea:find&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/orders{?id}&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;templated&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;ea:admin&quot;</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/admins/2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Fred&quot;</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/admins/5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Kate&quot;</span>
+        <span class="p">}]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currentlyProcessing&quot;</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">&quot;shippedToday&quot;</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&quot;_embedded&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ea:order&quot;</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;self&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/orders/123&quot;</span> <span class="p">},</span>
+                <span class="s2">&quot;ea:basket&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/baskets/98712&quot;</span> <span class="p">},</span>
+                <span class="s2">&quot;ea:customer&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/customers/7809&quot;</span> <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="mf">30.00</span><span class="p">,</span>
+            <span class="s2">&quot;currency&quot;</span><span class="o">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;shipped&quot;</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;self&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/orders/124&quot;</span> <span class="p">},</span>
+                <span class="s2">&quot;ea:basket&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/baskets/97213&quot;</span> <span class="p">},</span>
+                <span class="s2">&quot;ea:customer&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/customers/12369&quot;</span> <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;total&quot;</span><span class="o">:</span> <span class="mf">20.00</span><span class="p">,</span>
+            <span class="s2">&quot;currency&quot;</span><span class="o">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;processing&quot;</span>
+        <span class="p">}]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2>The HAL Model</h2>
+
+<p>The HAL conventions revolve around representing two simple concepts: <em>Resources</em> and <em>Links</em>.</p>
+
+<h3>Resources</h3>
+
+<p>Resources have:</p>
+
+<ul>
+<li>Links (to URIs)</li>
+<li>Embedded Resources (i.e. other resources contained within them)</li>
+<li>State (your bog standard JSON or XML data)</li>
+</ul>
+
+<h3>Links</h3>
+
+<p>Links have:</p>
+
+<ul>
+<li>A target (a URI)</li>
+<li>A relation aka. &#39;rel&#39; (the name of the link)</li>
+<li>A few other optional properties to help with deprecation, content
+negotiation, etc.</li>
+</ul>
+
+<p>Below is an image that roughly illustrates how a HAL representation is
+structured:</p>
+
+<p><img src="/assets/info-model.png" alt="The HAL Information model"></p>
+
+<h2>How HAL is used in APIs</h2>
+
+<p>HAL is designed for building APIs in which clients navigate around the
+resources by following links.</p>
+
+<p>Links are identified by link relations. Link relations are the lifeblood
+of a hypermedia API: they are how you tell client developers about
+what resources are available and how they can be interacted with, and
+they are how the code they write will select which link to traverse.</p>
+
+<p>Link relations are not just an identifying string in HAL, though. They
+are actually URLs, which developers can follow in order to read the
+documentation for a given link. This is what is known as
+&quot;discoverability&quot;. The idea is that a developer can enter into your API,
+read through documentation for the available links, and then
+follow-their-nose through the API.</p>
+
+<p>HAL encourages the use of link relations to:</p>
+
+<ul>
+<li>  Identify links and embedded resources within the representation</li>
+<li>  Infer the expected structure and meaning of target resources</li>
+<li>  Signalling what requests and representations can be submitted to target resources</li>
+</ul>
+
+<h2>How to serve HAL</h2>
+
+<p>HAL has a media type for both the JSON and XML variants, whos names are
+<code>application/hal+json</code> and <code>application/hal+xml</code> respectively.</p>
+
+<p>When serving HAL over HTTP, the <code>Content-Type</code> of the response should
+contain the relevant media type name.</p>
+
+<h2>The structure of a HAL document</h2>
+
+<h3>Minimum valid document</h3>
+
+<p>A HAL document must at least contain an empty resource.</p>
+
+<p>An empty JSON object:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{}</span>
+</code></pre></div>
+<h3>Resources</h3>
+
+<p>In most cases, resources should have a self URI</p>
+
+<p>Represented via a &#39;self&#39; link:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;self&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/example_resource&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Links</h3>
+
+<p>Links must be contained directly within a resource:</p>
+
+<p>Links are represented as JSON object contained within a <code>_links</code> hash
+that must be a direct property of a resource object:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;next&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/page=2&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4>Link Relations</h4>
+
+<p>Links have a relation (aka. &#39;rel&#39;). This indicates the semantic -
+the meaning - of a particular link.</p>
+
+<p>Link rels are the main way of distinguishing between a resource&#39;s links.</p>
+
+<p>It&#39;s basically just a key within the <code>_links</code> hash, associating the link meaning
+(the &#39;rel&#39;) with the link object that contains data like the actual &#39;href&#39; value:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;next&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/page=2&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4>API Discoverability</h4>
+
+<p>Link rels should be URLs which reveal documentation about the
+given link, making them &quot;discoverable&quot;.  URLs are generally quite long
+and a bit nasty for use as keys. To get around this, HAL provides
+&quot;CURIEs&quot; which are basically named tokens that you can define in the
+document and use to express link relation URIs in a friendlier, more
+compact fashion i.e.  <code>ex:widget</code> instead of
+<code>http://example.com/rels/widget</code>. The details are available in the
+section on CURIEs a bit further down.</p>
+
+<h3>Representing Multiple Links With The Same Relation</h3>
+
+<p>A resource may have multiple links that share the same link relation.</p>
+
+<p>For link relations that may have multiple links, we use an array of
+links.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[{</span>
+          <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/first_item&quot;</span>
+      <span class="p">},{</span>
+          <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/second_item&quot;</span>
+      <span class="p">}]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong> If you&#39;re unsure whether the link should be singular, assume it
+will be multiple. If you pick singular and find you need to change it,
+you will need to create a new link relation or face breaking existing
+clients.</p>
+
+<h3>CURIEs</h3>
+
+<p>&quot;CURIE&quot;s help providing links to resource documentation.</p>
+
+<p>HAL gives you a reserved link relation &#39;curies&#39; which you can use to hint at the location of resource documentation.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="s2">&quot;_links&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;curies&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;doc&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;http://haltalk.herokuapp.com/docs/{rel}&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;templated&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+
+  <span class="s2">&quot;doc:latest-posts&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;href&quot;</span><span class="o">:</span> <span class="s2">&quot;/posts/latest&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>There can be multiple links in the &#39;curies&#39; section. They come with a &#39;name&#39; and a templated &#39;href&#39; which must
+contain the <code>{rel}</code> placeholder.</p>
+
+<p>Links in turn can then prefix their &#39;rel&#39; with a CURIE name. Associating the <code>latest-posts</code> link with the <code>doc</code>
+documentation CURIE results in a link &#39;rel&#39; set to <code>doc:latest-posts</code>.</p>
+
+<p>To retrieve documentation about the <code>latest-posts</code> resource, the client will expand the associated CURIE link
+with the actual link&#39;s &#39;rel&#39;. This would result in a URL <code>http://haltalk.herokuapp.com/docs/latest-posts</code> which
+is expected to return documentation about this resource.</p>
+
+<h2>To be continued...</h2>
+
+<p>This relatively informal specification of HAL is incomplete and still in
+progress. For now, if you would like to have a full understanding please
+read the <a href="http://tools.ietf.org/html/draft-kelly-json-hal">formal specification</a>.</p>
+
+<h2>RFC</h2>
+
+<p>The JSON variant of HAL (application/hal+json) has now been published as
+an internet draft: <a href="http://tools.ietf.org/html/draft-kelly-json-hal">draft-kelly-json-hal</a>.</p>
+
+<h2>Acknowledgements</h2>
+
+<ul>
+<li>Darrel Miller</li>
+<li>Mike Amundsen</li>
+<li>Mark Derricutt</li>
+<li>Herman Radtke</li>
+<li>Will Hartung</li>
+<li>Steve Klabnik</li>
+<li>everyone on hal-discuss</li>
+</ul>
+
+<p>Thanks for the help :)</p>
+
+<h2>Notes/todo</h2>
+
+      </div>
+
+      <footer></footer>
+
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = [['_setAccount', 'UA-21772280-1'], ['_trackPageview']];
+      (function(d, t) {
+        var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+        g.async = true;
+        g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+      })(document, 'script');
+    </script>
+
+  </body>
+</html>
