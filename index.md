@@ -5,14 +5,14 @@ site:
   paginate: false
 ---
 
-Stateless Group is a consultancy helping financial businesses grow faster
+Stateless is a consultancy helping financial businesses grow faster
 by using APIs to be better connected with their customers and partners.
 
 We’re experts in the business and technology of financial APIs.
 
 If you want to succeed with APIs, you need to develop a clear overall
-vision for the business whilst getting all the design and technical
-details right.
+vision for the business whilst getting all the design and delivery
+complexities right.
 
 We know how to execute on all of this, and ensure you meet your business
 goals.
@@ -24,7 +24,7 @@ goals.
 * Temenos
 * Funding Circle
 
-## Stateless Group is led by Mike Kelly
+## Stateless is led by Mike Kelly
 
 <img width="100" height="100" style="border-radius: 50%;" src="/assets/mike.jpg">
 
@@ -39,7 +39,7 @@ cryptography.
 ## Contact us
 We can help you succeed.
 
-Just send a hello to [team@stateless.group](mailto:team@stateless.group) and we'll pick it up from there.
+Send a quick hello to [team@stateless.group](mailto:team@stateless.group) and we'll arrange a brief intro call.
 
 ## Stay in the loop
 
